@@ -1,12 +1,13 @@
 import React from "react";
 import { Button, Container, Menu } from "semantic-ui-react";
+import './Navbar.css';
 
 const Navbar = () => {
   return (
     <Menu fixed="top" inverted>
       <Container>
         <Menu.Item header>
-          <img src="/assets/logo.png" alt="logo" />
+          <img src="/assets/logo.png" alt="logo" className='img' />
           Reactivities
         </Menu.Item>
         <Menu.Item name="messages" />
