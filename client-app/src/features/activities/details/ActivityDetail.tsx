@@ -1,16 +1,25 @@
 import React from "react";
-import { Button, Card, Icon, Image } from "semantic-ui-react";
+import { Button, Card, Image } from "semantic-ui-react";
+import { IActivity } from "../../../app/models/activity";
 
-const ActivityDetail = () => {
+interface IProps {
+  activity: IActivity;
+}
+
+const ActivityDetail: React.FC<IProps> = ({ activity }) => {
   return (
     <Card fluid>
-      <Image src="/assets/placeholder.png" wrapped ui={false} />
+      <Image
+        src={`/assets/categoryImages/${activity.category}.jpg`}
+        wrapped
+        ui={false}
+      />
       <Card.Content>
-        <Card.Header>Title</Card.Header>
+        <Card.Header>{activity.title}</Card.Header>
         <Card.Meta>
-          <span>Date</span>
+          <span>{activity.date}</span>
         </Card.Meta>
-        <Card.Description>Description</Card.Description>
+        <Card.Description>{activity.description}</Card.Description>
       </Card.Content>
       <Card.Content extra>
         <Button.Group widths={2}>
