@@ -41,6 +41,7 @@ const ActivityDashboard: React.FC<IProps> = ({
         )}
         {editMode && (
           <ActivityForm
+            key={(selectedActivity && selectedActivity.id) || 0}
             activity={selectedActivity!}
             setEditMode={setEditMode}
             createActivity={createActivity}
